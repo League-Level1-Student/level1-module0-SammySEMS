@@ -6,6 +6,9 @@ package _01_methods._1_houses;
 public class HousesRunner {
 
 	public static void main(String[] args) {
+		
+		Robot rob = new Robot();
+	}
 		//Here we call the run() method from the Houses class
 		//Do not add any more code here!
 		
@@ -13,6 +16,6 @@ public class HousesRunner {
 		houseBuilder.run();
 
 
-	}
+	
 
 }
