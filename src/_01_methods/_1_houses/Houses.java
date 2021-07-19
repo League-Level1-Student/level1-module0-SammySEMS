@@ -21,30 +21,31 @@ public class Houses {
 		rob.moveTo(20, 450);
 		rob.penDown();
 		rob.setSpeed(6);
-		String color = JOptionPane
-				.showInputDialog("What color would you like to draw the houses with? Black? Red? Blue? Pink?");
-
-		if (color.equalsIgnoreCase("black")) {
-			rob.setPenColor(Color.black);
-		}
-		if (color.equalsIgnoreCase("red")) {
-			rob.setPenColor(Color.red);
-		}
-		if (color.equalsIgnoreCase("blue")) {
-			rob.setPenColor(Color.blue);
-		}
-		if (color.equalsIgnoreCase("pink")) {
-			rob.setPenColor(Color.pink);
-		}
+		
 
 		for (int i = 0; i < 10; i++) {
-			String size = JOptionPane.showInputDialog("Small, medium or large house?");
 			
-			drawHouse(size);
+			String size = JOptionPane.showInputDialog("Small, medium or large house?");
+			String color = JOptionPane.showInputDialog("What color would you like to draw the houses with? Black? Red? Blue? Pink?");
+
+			if (color.equalsIgnoreCase("black")) {
+				rob.setPenColor(Color.black);
+			}
+			if (color.equalsIgnoreCase("red")) {
+				rob.setPenColor(Color.red);
+			}
+			if (color.equalsIgnoreCase("blue")) {
+				rob.setPenColor(Color.blue);
+			}
+			if (color.equalsIgnoreCase("pink")) {
+				rob.setPenColor(Color.pink);
+			}
+			
+			drawHouse(size,i);
 		}
 	}
 
-	static void drawHouse(String size) {
+	static void drawHouse(String size, int houseNum) {
 		if (size.equalsIgnoreCase("small")) {
 			rob.move(small);
 		} else if (size.equalsIgnoreCase("medium")) {
@@ -53,9 +54,16 @@ public class Houses {
 		} else {
 			rob.move(large);
 		}
-		rob.turn(90);
-		rob.move(50);
-		rob.turn(90);
+		if(houseNum%2==0) {
+			rob.turn(90);
+			rob.move(50);
+			rob.turn(90);
+		}
+		else {
+			drawPointyRoof(size);
+		}
+		
+		
 		if (size.equalsIgnoreCase("small")) {
 			rob.move(small);
 		} else if (size.equalsIgnoreCase("medium")) {
@@ -70,26 +78,23 @@ public class Houses {
 		rob.turn(-90);
 	}
 
-	static void drawFlatRoof() {
-
-	}
-//static void drawPointyRoof(String size) {
-	//if (size.equalsIgnoreCase("small")) {
-		//rob.move(small);
-	//} else if (size.equalsIgnoreCase("medium")) {
-	//	rob.move(medium);
-
-	//} else {
-		//rob.move(large);
-//	}
-	//rob.turn(45);
-	//rob.move(25);
-	//rob.turn(45);
-	//rob.move(25);
-//}
+	
+	
+	
+	
+	
+static void drawPointyRoof(String size) {
+	
+	rob.turn(45);
+	rob.move(50);
+	rob.turn(90);
+	rob.move(50);
+	rob.turn(45);
+	
+}}
 	// private void drawFlatRoof() {
 	// // TODO Auto-generated method stub
 	//
 	// }
 	// Check the recipe to find out what code to put here
-}
+
