@@ -8,18 +8,21 @@
 // If you want to add your own picure, find an image of a record, save it to your computer. 
 // Then drag and drop it onto your code window before proceeding.
 
-PImage pictureOfRecord;   // This variable will hold your image
+PImage Record;   // This variable will hold your image
 
 // Create a variable to keep track of the image rotation angle. Initialize it to zero.
-
+int angle=0;
 
 // The setup method is run once when the program starts
 void setup() {
-  
-  // Set the size of your sketch here
 
+  // Set the size of your sketch here
+  size(600,600);
   
-  pictureOfRecord= loadImage("record.png");  // This loads the image. Change the name if you added a new image.  
+  Record= loadImage("record.png");
+  Record.resize(600,600);
+  
+  // This loads the image. Change the name if you added a new image.  
   // Resize the pictureOfRecord to be the height and width of the sketch
   
 }
@@ -29,9 +32,9 @@ void setup() {
 void draw() {
 
   // Call the rotateImage method to rotate the image by the amount of the angle variable
-  
-  image (pictureOfRecord, 0, 0);  //draws the record image after it has been rotated
-  
+  rotateImage(Record,angle);
+  image (Record, 0, 0);  //draws the record image after it has been rotated
+   
   // Increase the angle variable to add more rotation 
   
   // Run the program. The record should spin!
