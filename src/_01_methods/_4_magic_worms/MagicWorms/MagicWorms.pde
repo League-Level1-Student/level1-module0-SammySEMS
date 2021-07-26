@@ -4,14 +4,14 @@
  */
 
 /** This program draws a magical pattern **/
-
+int x=0;
 // The setup method is run once when the program starts
 void setup() {
-
+size(600,600);
   //Set your canvas size
 
   //Set a background color  
-
+background(#252B2C);
 }
 
 // The draw method runs continuously (in a loop) until the program ends
@@ -21,7 +21,14 @@ void draw() {
   // Use a for loop to draw 300 small ellipses in a diagonal line across the canvas.
   // Make them a bright color.
   // RUN THE PROGRAM TO CHECK IT (see the recipe for the expected outcome).
-
+  for (int i = 0; i < 300; i++) {
+    fill(#FC52A2);
+    //ellipse(x,300,5,5);
+     int randomNumber = (int) random(width); 
+   int randomNumber2 = (int) random(height);
+    ellipse(randomNumber, randomNumber2, 5,5);
+    x+=5;
+  }
   // STEP 2.
   // Now make each ellipse use random values for their x and y co-ordinates. Make sure they are inside the canvas. 
   // Hint:  random(int maxValue)
