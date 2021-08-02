@@ -18,15 +18,15 @@ public class PhotoQuiz {
 
 	public void run() {
 
-		JFrame quizWindow = new JFrame();
-		quizWindow.setVisible(true);
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
 		// This will make sure the program exits when you close the window
-		quizWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
-
+String image = https://www.livewellsd.org/content/livewell/home/all-articles/partners/partner-home/league-of-amazing-programmers/_jcr_content/lw_par/lw_rwd_column/lw_rwd_col_1c/lw_image.img.jpg/1499454763180.jpg
 		// 2. create a variable of type "Component" that will hold your image
 
 		// 3. use the "createImage()" method below to initialize your Component
