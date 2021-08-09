@@ -35,23 +35,22 @@ frame.setTitle("DrumKit");
 		//  Make a JPanel variable and initialize it using "new JPanel().
 JPanel panel = new JPanel();
 		//  Add the panel to the frame. (The panel is invisible.)
-panel.setVisible(false);
+//panel.setVisible(false);
 frame.add(panel);
 		//  Use the image of a drum provided ("snare.jpg") or
 		//  download an image of a drum from the Internet and drop it into the
 		//  Drum Kit recipe package.
 
 		//  Put the name of the drum image file in a String variable.
-String image = snare.jpg;
+String image = "snare.jpg";
 		//  Edit the next line to use your String variable
-		//drumLabel = createLabelImage(drumImageString);
-JLabel label = new JLabel();
+		drumLabel = createLabelImage(image);
+
 		//  Add the label to the panel
-panel.add(label);
+panel.add(drumLabel);
 		//  Call the pack() method on the frame. 
 		// Run your program. Do you see your drum image?
-
-		// Add this MouseListener to drumLabel
+frame.pack();		// Add this MouseListener to drumLabel
 		
 		// *** Write the code in the mouseClicked() method below
 

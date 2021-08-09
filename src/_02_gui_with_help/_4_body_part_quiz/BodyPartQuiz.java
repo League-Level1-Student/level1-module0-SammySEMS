@@ -21,14 +21,15 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String firstImage = "src/_02_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "src/_02_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "src/_02_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "src/_02_gui_with_help/_4_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
 
+	JLabel label = new JLabel();
 	public void run() {
 		initializeGui();
 		startQuiz();
@@ -51,26 +52,66 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+int score=0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+//initializeGui();
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
+		//label=loadImage(firstImage);
+		//panel.add(label);
+		//window.pack();
+String guess = JOptionPane.showInputDialog("who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
+if(guess.equalsIgnoreCase("arnold")) {
+	score++;
+	JOptionPane.showMessageDialog(null, "Correct!");
+}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+else {
+	JOptionPane.showMessageDialog(null, "Incorrect, it was Arnold");
+}
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
-
+		String guess1 = JOptionPane.showInputDialog("who is this?");
+		if(guess1.equalsIgnoreCase("jack")) {
+			score++;
+			JOptionPane.showMessageDialog(null, "Correct!");
+		}
+			
+		else {
+			JOptionPane.showMessageDialog(null, "incorrect it was jack");
+		}showNextImage();
+		String guess2 = JOptionPane.showInputDialog("who is this?");
+		if(guess2.equalsIgnoreCase("leonardo")) {
+			score++;
+			JOptionPane.showMessageDialog(null, "Correct!");
+		}
+			
+		else {
+			JOptionPane.showMessageDialog(null, "incorrect it was jack");
+		}
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("who is this?");
+		if(guess3.equalsIgnoreCase("morgan")) {
+			score++;
+			JOptionPane.showMessageDialog(null, "Correct!");
+		}
+			
+		else {
+			JOptionPane.showMessageDialog(null, "incorrect it was jack");
+		}
 		// 9. Show them their current score
-
+JOptionPane.showMessageDialog(null, "Your final score is " +score);
 	}
+
+	
+		// TODO Auto-generated method stub
+	
+	
 
 	public void showNextImage() {
 		panel.removeAll();
