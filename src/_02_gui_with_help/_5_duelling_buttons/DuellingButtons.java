@@ -37,9 +37,9 @@ leftButton.setText("Click me!");
 		// 4. Set the text of the rightButton to "Click me!"
 rightButton.setText("Click me!");
 		// 5. Add an action listener to the leftButton
-leftButton.addActionListener(null);
+leftButton.addActionListener(this);
 		// 6. Add an action listener to the rightButton
-rightButton.addActionListener(null);
+rightButton.addActionListener(this);
 		// 7. Add the leftButton to the panel
 panel.add(leftButton);
 		// 8. Add the rightButton to the panel
